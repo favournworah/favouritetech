@@ -11,11 +11,7 @@ router.get("/pricing", function () {
   return "Hello pricing";
 });
 
-router.post(
-  "/uploadmultiple",
-  store.array("images", 5),
-  routeController.uploads
-);
+router.post("/graphics", store.array("images", 5), routeController.uploads);
 
 router.get("/", routeController.home);
 

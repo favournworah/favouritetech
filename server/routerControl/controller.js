@@ -2,14 +2,27 @@ const UploadModel = require("../model/schema");
 const fs = require("fs");
 
 exports.portfolio = async (req, res) => {
+  const image = await UploadModel.find();
+  //Object.keys(image);
   res.render("portfolio", {
     pageTitle: "MickyDesigns - Welcome to my portfolio showroom",
+    layout: "portfolio",
+    images: image,
   });
 };
 
 exports.graphicsDisplay = async (req, res) => {
   const image = await UploadModel.find();
-  res.render("graphicsDisplay", { images: image });
+  let keys = 0;
+  for (let imagesUploaded of Object.values(image)) {
+    keys += imagesUploaded;
+  }
+
+  res.render("graphicsDisplay", {
+    images: image,
+    items: keys,
+    layout: "graphicsDisplay",
+  });
 };
 
 exports.uploads = (req, res, next) => {
@@ -57,12 +70,12 @@ exports.uploads = (req, res, next) => {
   });
 
   Promise.all(result)
-    .then((msg) => {
-      res.json(msg);
-      //res.redirect('/')
+    .then(() => {
+      //res.json(msg);
+      res.redirect("/graphics");
     })
     .catch((err) => {
-      res.json(err);
+      res.send(err);
     });
 };
 
@@ -70,5 +83,6 @@ exports.home = async (req, res) => {
   res.render("main", {
     pageTitle:
       "MickyDesigns - Brand Management and Software development Projects",
+    layout: "main",
   });
 };

@@ -14,17 +14,17 @@ require("./server/database/db")();
 
 //set up template engine
 app.set("view engine", "hbs");
-app.engine(
-  "hbs",
-  hbs({
-    extname: "hbs",
-    defaultView: "default",
-    layoutsDir: path.join(__dirname, "views"),
-    partialsDir: path.join(__dirname, "views/partials"),
-  })
-);
 
-//calling router
+const handleEngine = hbs.create({
+  defaultLayout: "main",
+  extname: ".hbs",
+  layoutsDir: path.join(__dirname, "views/"),
+  partialsDir: path.join(__dirname, "views/partials"),
+});
+
+app.engine("hbs", handleEngine.engine);
+
+// calling router
 app.use("/", require("./server/router/router.js"));
 
 app.listen(3002);
