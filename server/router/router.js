@@ -7,10 +7,6 @@ router.get("/portfolio", routeController.portfolio);
 
 router.get("/graphics", routeController.graphicsDisplay);
 
-router.get("/pricing", function () {
-  return "Hello pricing";
-});
-
 router.post("/graphics", store.array("images", 5), routeController.uploads);
 
 router.get("/", routeController.home);
