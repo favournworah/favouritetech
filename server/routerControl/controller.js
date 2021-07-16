@@ -1,4 +1,4 @@
-const UploadModel = require("../model/schema");
+const UploadModel = require("../model/graphicsUpload");
 const fs = require("fs");
 
 exports.portfolio = async (req, res) => {
