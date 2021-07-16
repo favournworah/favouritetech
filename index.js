@@ -34,7 +34,11 @@ const handleEngine = hbs.create({
 app.engine("hbs", handleEngine.engine);
 
 // calling router
-app.use("/", require("./server/router/router.js"));
+app.use(
+  "/",
+  require("./server/router/router.js"),
+  require("./server/router/adminRouter.js")
+);
 
 const MY_PORT = process.env.PORT;
 

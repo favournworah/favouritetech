@@ -1,0 +1,359 @@
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    {{! <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png"> }}
+    <title>
+      Favourite Tech Dashboard
+    </title>
+    <!--     Fonts and icons     -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link href="fontawesome/all.min.js" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="css/nucleo-icons.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="css/demo.css" rel="stylesheet" />
+    <style>
+      .blackiconcolor{ color: white; }
+    </style>
+  </head>
+
+  <body class="">
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="sidebar-wrapper">
+          <div class="logo">
+
+            <a href="javascript:void(0)" class="simple-text logo-normal">
+              Favourite Tech
+            </a>
+          </div>
+          <ul class="nav">
+            <li class="active">
+              <a href="/admin">
+                <p>Dashboard</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+          <div class="container-fluid">
+            <div class="navbar-wrapper">
+              <div class="navbar-toggle d-inline">
+                <button type="button" class="navbar-toggler">
+                  <span class="navbar-toggler-bar bar1"></span>
+                  <span class="navbar-toggler-bar bar2"></span>
+                  <span class="navbar-toggler-bar bar3"></span>
+                </button>
+              </div>
+              <a class="navbar-brand" href="/admin">Dashboard</a>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-bar navbar-kebab"></span>
+              <span class="navbar-toggler-bar navbar-kebab"></span>
+              <span class="navbar-toggler-bar navbar-kebab"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav ml-auto">
+                <li class="dropdown nav-item">
+                  <a
+                    href="#"
+                    class="dropdown-toggle nav-link"
+                    data-toggle="dropdown"
+                  >
+                    <div class="photo">
+                      <img src="images/kimmora.jpeg" alt="Profile Photo" />
+                    </div>
+                    <b class="caret d-none d-lg-block d-xl-block"></b>
+                    <p class="d-lg-none">
+                      Log out
+                    </p>
+                  </a>
+                  <ul class="dropdown-menu dropdown-navbar">
+                    <li class="nav-link"><a
+                        href="javascript:void(0)"
+                        class="nav-item dropdown-item"
+                      >Profile</a></li>
+                    <li class="nav-link"><a
+                        href="javascript:void(0)"
+                        class="nav-item dropdown-item"
+                      >Settings</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="nav-link"><a
+                        href="javascript:void(0)"
+                        class="nav-item dropdown-item"
+                      >Log out</a></li>
+                  </ul>
+                </li>
+                <li class="separator d-lg-none"></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="modal modal-search fade"
+          id="searchModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="searchModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inlineFormInputGroup"
+                  placeholder="SEARCH"
+                />
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <i class="tim-icons icon-simple-remove"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Navbar -->
+        <div class="content">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div class="card card-tasks">
+                <div class="card-header">
+                  <h6 class="title d-inline">brand posts(5)</h6>
+                  <p class="card-category d-inline">Featured brands</p>
+                  <div class="dropdown">
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-full-width table-responsive">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                />
+                                <span class="form-check-sign">
+                                  <span class="check"></span>
+                                </span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="title">Photo</p>
+                            <div></div>
+                          </td>
+                          <td class="td-actions text-right">
+                            <button
+                              type="button"
+                              rel="tooltip"
+                              title=""
+                              class="btn btn-link"
+                              name="edit"
+                              data-original-title="Edit Task"
+                            >
+                              <i class="blackiconcolor">edit</i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{! <div class="col-lg-6 col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title"> Reviews</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table tablesorter" id="">
+                      <thead class="text-primary">
+                        <tr>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Country
+                          </th>
+                          <th>
+                            City
+                          </th>
+                          <th class="text-center">
+                            Salary
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            Dakota Rice
+                          </td>
+                          <td>
+                            Niger
+                          </td>
+                          <td>
+                            Oud-Turnhout
+                          </td>
+                          <td class="text-center">
+                            $36,738
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Minerva Hooper
+                          </td>
+                          <td>
+                            Curaçao
+                          </td>
+                          <td>
+                            Sinaai-Waas
+                          </td>
+                          <td class="text-center">
+                            $23,789
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Sage Rodriguez
+                          </td>
+                          <td>
+                            Netherlands
+                          </td>
+                          <td>
+                            Baileux
+                          </td>
+                          <td class="text-center">
+                            $56,142
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Philip Chaney
+                          </td>
+                          <td>
+                            Korea, South
+                          </td>
+                          <td>
+                            Overland Park
+                          </td>
+                          <td class="text-center">
+                            $38,735
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Doris Greene
+                          </td>
+                          <td>
+                            Malawi
+                          </td>
+                          <td>
+                            Feldkirchen in Kärnten
+                          </td>
+                          <td class="text-center">
+                            $63,542
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Mason Porter
+                          </td>
+                          <td>
+                            Chile
+                          </td>
+                          <td>
+                            Gloucester
+                          </td>
+                          <td class="text-center">
+                            $78,615
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Jon Porter
+                          </td>
+                          <td>
+                            Portugal
+                          </td>
+                          <td>
+                            Gloucester
+                          </td>
+                          <td class="text-center">
+                            $98,615
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> }}
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid">
+            <ul class="nav">
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link">
+                  Favourite Tech
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+    <script
+      src="../assets/js/black-dashboard.min.js?v=1.0.0"
+    ></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/demo/demo.js"></script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  </body>
+
+</html>
