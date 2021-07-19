@@ -45,35 +45,37 @@
     {{!input area from choose file to button end}}
 
     {{!display images beginning}}
-    <section class="mt-5">
-      <div class="row">
-        {{#each images}}
-          {{#each this}}
-            {{#if imageBase64}}
-              <div class="col-3">
-                <div class="card shadow" style="width: 18rem;">
-                  <img
-                    src="data:{{contentType}};base64,{{imageBase64}}"
-                    class="card-img-top img-fluid"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title font-poppins">UI/UX Design</h5>
-                    <p class="text-secondary font-size-09">Some quick example
-                      text to build on the card title and make up the bulk of
-                      the card's content.</p>
-                    <a
-                      href="#"
-                      class="btn btn-info font-size-09 text-light"
-                    >Read more</a>
-                  </div>
+<section class="bg-light py-10" id="explore">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-10">
+                    <h2>Graphic Designs</h2>
+                    <p class="lead">You do not have to be left out in owning professionally designed graphics as shown below</p>
                 </div>
-              </div>
+            </div>
+        </div>
+        <div class="row gx-5 text-center">
+            
+    {{#each images}}
+        {{#each this}}
+            {{#if imageBase64}}
+            <div class="col-lg-4 mb-5">
+                <h6 class="mb-3">Demo 1 - Multipurpose</h6>
+                <a class="d-block rounded-3 lift lift-lg" href="#">
+                    <img class="img-fluid rounded-3" src="data:{{contentType}};base64,{{imageBase64}}">
+                </a>
+            </div>
             {{/if}}
-          {{/each}}
-        {{/each}}
-      </div>
-    </section>
+        {{/each}} 
+    {{/each}}
+        </div>
+    </div>
+    <div class="svg-border-rounded text-white">
+        <!-- Rounded SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</section>
     {{!display images end}}
 
   </div>
