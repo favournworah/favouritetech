@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+<section class="section my-4">
+  <div class="container">
+    <div class="title py-5">
+      <h1>Graphics Uploader</h1>
+    </div>
+    <form action="/addgraphics" method="POST">
+      <div class="form-group">
+        <label for="graphicTitle">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          name="graphicTitle"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="graphicSnippet">Description</label>
+        <textarea
+          type="text"
+          class="form-control"
+          placeholder="Description"
+          name="graphicSnippet"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <a href="/admin" class="btn btn-warning">Cancel</a>
+        <button type="submit" class="btn btn-primary py-2">
+          Save Graphics
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/scripts') %>

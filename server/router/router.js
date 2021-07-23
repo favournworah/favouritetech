@@ -1,13 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const routeController = require("../routerControl/controller");
-const store = require("../middleware/multer");
+const GraphicsUpload = require("../model/graphicsModel");
 
-router.get("/portfolio", routeController.portfolio);
+// router.get("/portfolio", routeController.portfolio);
 
 router.get("/graphics", routeController.graphicsDisplay);
 
-router.post("/graphics", store.array("images", 5), routeController.uploads);
+router.get("/admin", async (req, res) => {
+  let graphical = await GraphicsUpload.find().sort({ timeCreated: "desc" });
+  res.render("admin/dashboard", {
+    pageTitle: "admin dashboard",
+    graphics: graphical,
+  });
+});
 
 router.get("/", routeController.home);
 
