@@ -1,0 +1,20 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\..\\favourite"
+	},
+	{
+		"path": "..\\..\\..\\project1"
+	},
+	{
+		"path": "..\\.."
+	},
+	{
+		"path": "..\\..\\..\\New folder (2)"
+	}
+],
+  "settings": {
+    "git.ignoreLimitWarning": true,
+    "liveServer.settings.multiRootWorkspaceName": "favourite"
+  }
+}

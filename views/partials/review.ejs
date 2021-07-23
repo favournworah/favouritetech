@@ -1,9 +1,8 @@
 <section class="testimonial-section pb-5 pt-2">
-  <h2 class="text-primary text-center pb-3">REVIEWS</h2>
+  <h2 class="text-secondary text-center pb-3">REVIEWS</h2>
   <div class="container">
     <div class="testimonials-slider-container position-relative mb-5">
       <div class="testimonials-slider tiny-slider">
-        <% details.forEach(function(reviews){%>
         <div class="item">
           <div class="item-inner rounded shadow-sm">
             <div class="row source-holder">
@@ -12,9 +11,9 @@
                 </div> -->
               <!--//col-->
               <div class="col source-meta align-self-center">
-                <div class="name"><%= reviews.name %></div>
+                <div class="name"></div>
                 <div class="info">
-                  <a class="text-link" href="#"><%= reviews.twitterUsername %></a>
+                  <a class="text-link" href="#"></a>
                 </div>
               </div>
               <!--//col-->
@@ -22,14 +21,12 @@
             </div>
             <!--//row-->
             <div class="quote-holder">
-              <blockquote class="quote-content mb-0"><%= reviews.blockquote %></blockquote>
+              <blockquote class="quote-content mb-0"></blockquote>
             </div>
             <!--//quote-holder-->
           </div>
           <!--//item-inner-->
         </div>
-
-        <% }) %>
 
         <!--//item-->
       </div>

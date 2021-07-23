@@ -1,11 +1,11 @@
 const express = require("express");
-const app = express();
 const path = require("path");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
-app.use(express.json());
-const hbs = require("express-handlebars");
-const { callbackify } = require("util");
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //serving static files
 app.use(express.static(path.join(__dirname, "public")));
@@ -22,16 +22,7 @@ corsOptions = {
 app.use(cors(corsOptions));
 
 //set up template engine
-app.set("view engine", "hbs");
-
-const handleEngine = hbs.create({
-  defaultLayout: "main",
-  extname: ".hbs",
-  layoutsDir: path.join(__dirname, "views/"),
-  partialsDir: path.join(__dirname, "views/partials"),
-});
-
-app.engine("hbs", handleEngine.engine);
+app.set("view engine", "ejs");
 
 // calling router
 app.use(
