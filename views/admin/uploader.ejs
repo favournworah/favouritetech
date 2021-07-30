@@ -4,7 +4,7 @@
     <div class="title py-5">
       <h1>Graphics Uploader</h1>
     </div>
-    <form action="/addgraphics" method="POST">
+    <form action="/addgraphics" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label for="graphicTitle">Title</label>
         <input
@@ -24,6 +24,15 @@
           name="graphicSnippet"
           required
         ></textarea>
+      </div>
+      <div class="form-group py-2">
+        <label for="image">Upload image</label>
+        <input
+          type="file"
+          name="graphicImage"
+          id="graphicImage"
+          class="form-control-file"
+        />
       </div>
       <div class="form-group">
         <a href="/admin" class="btn btn-warning">Cancel</a>

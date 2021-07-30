@@ -18,7 +18,6 @@ const graphicsUploadSchema = new mongoose.Schema({
   },
   img: {
     type: String,
-    default: "placeholder.jpg",
   },
   slug: {
     type: String,

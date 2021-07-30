@@ -4,13 +4,12 @@
     <div class="title py-5">
       <h1>Editing <%= graphics.title %></h1>
     </div>
-    <form action="/edit" method="POST">
+    <form action="/admin/edit/<%= graphics.id %>?_method=PUT " method="POST">
       <div class="form-group">
         <label for="graphicTitle">Title</label>
         <input
           type="text"
           class="form-control"
-          placeholder="Title"
           name="graphicTitle"
           value="<%= graphics.title %>"
           required
@@ -21,7 +20,6 @@
         <textarea
           type="text"
           class="form-control"
-          placeholder="Description"
           name="graphicSnippet"
           value="<%= graphics.snippet %>"
           required

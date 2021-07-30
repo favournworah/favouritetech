@@ -41,12 +41,14 @@
               <a href="/admin/edit/<%= graphic.id %> " class="text-light px-2"
                 ><i class="fas fa-edit"></i
               ></a>
-              <a href="" class="text-light px-2"
-                ><i class="fas fa-trash-alt"></i
-              ></a>
               <a href="/admin/<%= graphic.slug %> " class="text-light px-2"
                 ><i class="fas fa-eye"></i
               ></a>
+              <form action="/admin/<%= graphic.id %>?_method=DELETE">
+                <button>
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </form>
             </td>
           </tr>
         </tbody>
