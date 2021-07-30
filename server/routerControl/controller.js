@@ -21,20 +21,6 @@ exports.graphicsDisplay = async (req, res) => {
   });
 };
 
-exports.graphicUploads = async (req, res) => {
-  let graphicDetails = new GraphicsUpload({
-    title: req.body.graphicTitle,
-    snippet: req.body.graphicSnippet,
-  });
-  try {
-    graphics = await graphicDetails.save();
-    res.redirect(`/admin/${graphics.slug}`);
-  } catch (error) {
-    console.log(error);
-  }
-  //console.log(req.body);
-};
-
 exports.home = async (req, res) => {
   let graphical = await GraphicsUpload.find().sort({ timeCreated: "desc" });
   res.render("main", {

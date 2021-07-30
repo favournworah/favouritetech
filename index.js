@@ -14,6 +14,11 @@ app.use(express.static(path.join(__dirname, "public")));
 require("./server/database/db")();
 require("dotenv").config();
 
+//method override
+const methodOverride = require("method-override");
+
+app.use(methodOverride("_method"));
+
 //cors origin URL - Allow inbound traffic from origin
 corsOptions = {
   origin: "https://favouritetech.herokuapp.com/",

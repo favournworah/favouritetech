@@ -1,39 +1,52 @@
 <%- include('./partials/header') %> <%- include('./partials/navigation') %>
-<section class="bg-light py-10" id="explore">
-  <div class="container text-center">
-    <section class="bg-light py-10" id="explore">
-      <div class="container px-2">
-        <div class="row gx-2">
-          <div class="mb-10 justify-content-center">
-            <h2 class="text-center pt-5">Graphic Designs</h2>
-            <p class="lead text-center">
-              You do not have to be left out in owning professionally designed
-              graphics as shown below
-            </p>
-          </div>
-          <div class="row gx-2 text-center">
+<main>
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Graphic Designs</h1>
+      <p class="lead text-muted">
+        You do not have to be left out in owning professionally designed
+        graphics as shown below
+      </p>
+    </div>
+  </div>
+  </section>
+  <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <% if(graphics.length<1){ %> 
 
               <p class="text-white">No post yet</p>
 
               <% } %> 
             <% graphics.forEach(graphic=>{ %>
-            <div class="col-lg-3 mb-5">
-              <h5 class="mb-3"><b><%= graphic.title %> </b></h5>
-              <a class="d-block rounded-3 lift lift-lg" href="#">
-                <img
-                  class="img-fluid rounded-3"
-                  src="/uploads/<%= graphic.img %>"
-                  width="80%"
-                />
-              </a>
-              <span class="align-self-stretch"><%= graphic.snippet %></span>
-              <p style="font-size: 8px; line-height: 0.2rem">
-                <%= graphic.timeCreated.toLocaleDateString() %>
-              </p>
+            <div class="col">
+              <div class="card shadow-sm">
+                <a class="d-block rounded-3 lift lift-lg" href="#">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="/uploads/<%= graphic.img %>"
+                    width="100%"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="card-text">
+                    <b><%= graphic.title %> </b>
+                       <%= graphic.snippet %>
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <%= graphic.timeCreated.toLocaleDateString() %>
+                          </button>
+                        </div>
+                        <small class="text-muted">Like</small>
+                      </div>
+                </div>
+              
+            </div>
             </div>
             <% }) %>
-          </div>
       </div>
       <div class="svg-border-rounded text-white">
         <!-- Rounded SVG Border-->
@@ -48,8 +61,7 @@
           ></path>
         </svg>
       </div>
-    </section>
   </div>
-</section>
+</main>
 
 <%- include('./partials/footer') %> <%- include('./partials/scripts') %>
