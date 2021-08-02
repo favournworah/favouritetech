@@ -1,79 +1,69 @@
 <%- include('./partials/header') %> <%- include('./partials/navigation') %>
-
-<section class="bg-light py-10" id="explore">
-  <div class="container px-5">
-    <div class="row gx-5 justify-content-center">
-      <div class="col-lg-8">
-        <div class="text-center mb-10">
-          <div
-            class="
-              badge
-              rounded-pill
-              bg-primary-soft
-              text-primary
-              badge-marketing
-              mb-3
-            "
-          >
-            {{ items }} graphics
-          </div>
-          <h2>Graphic Designs</h2>
-        </div>
+<style>
+.horizontal{
+  color: #376b47;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 10px;
+}
+</style>
+<main>
+  <div class="album py-5 bg-light">
+      <div class="container">
+        <div>
+        <h4 class="horizontal">Graphic Works</h4>
+        <hr/>
       </div>
-    </div>
-    <div class="row gx-5 text-center">
-      <div class="col-lg-4 mb-5">
-        <h6 class="mb-3">Demo 1 - Multipurpose</h6>
-        <a class="d-block rounded-3 lift lift-lg" href="#">
-          <img
-            class="img-fluid rounded-3"
-            src="data:{{ contentType }};base64,{{ imageBase64 }}"
-          />
-        </a>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% if(graphics.length<1){ %> 
+
+              <p class="text-white">No post yet</p>
+
+              <% } %> 
+            <% graphics.forEach(graphic=>{ %>
+            <div class="col">
+              <div class="card shadow-sm">
+                <a class="d-block rounded-3 lift lift-lg" href="#">
+                  <img
+                    class="img-fluid rounded-3"
+                    src="/uploads/<%= graphic.img %>"
+                    width="100%"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="card-text">
+                    <b><%= graphic.title %> </b>
+                       <%= graphic.snippet %>
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <%= graphic.timeCreated.toLocaleDateString() %>
+                          </button>
+                        </div>
+                        <small class="text-muted">Like</small>
+                      </div>
+                </div>
+              
+            </div>
+            </div>
+            <% }) %>
       </div>
-    </div>
+      <div class="svg-border-rounded text-white">
+        <!-- Rounded SVG Border-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 144.54 17.34"
+          preserveAspectRatio="none"
+          fill="currentColor"
+        >
+          <path
+            d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"
+          ></path>
+        </svg>
+      </div>
   </div>
-  <div class="svg-border-rounded text-white">
-    <!-- Rounded SVG Border-->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 144.54 17.34"
-      preserveAspectRatio="none"
-      fill="currentColor"
-    >
-      <path
-        d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"
-      ></path>
-    </svg>
-  </div>
-</section>
-
-<!--<section class="bg-white py-10">
-                        <div class="container px-5">
-                            <div class="row gx-5 justify-content-center">
-                                <div class="col-lg-8">
-                                    <div class="text-center mb-10">
-                                        <div class="badge rounded-pill bg-primary-soft text-primary badge-marketing mb-3">19 Pages!</div>
-                                        <h2>Web Pages</h2>
-                                        <p class="lead">Our packages includes these beautiful website designs to help streamline the development of your business even further!</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row gx-5">-->
-
-<!--<div class="col-lg-4 mb-5">
-                                    <h6 class="mb-3">Company Pages</h6>
-                                    <a class="d-block rounded-3 lift lift-lg" href="#">
-                                        <img class="img-fluid rounded-3" src="data:{{contentType}};base64,{{imageBase64}}">
-                                    </a>
-                                </div>-->
-
-<!-- </div>
-                        </div>
-                        <div class="svg-border-rounded text-light">
-                             Rounded SVG Border
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-                        </div>
-                    </section> -->
+</main>
 
 <%- include('./partials/footer') %> <%- include('./partials/scripts') %>

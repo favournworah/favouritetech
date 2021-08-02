@@ -3808,6 +3808,8 @@ fieldset:disabled .btn {
   flex-grow: 1;
   -webkit-align-items: center;
   align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px;
 }
 .navbar-toggler {
   padding: 0.25rem 0.75rem;

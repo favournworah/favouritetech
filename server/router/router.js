@@ -15,6 +15,14 @@ router.get("/admin", async (req, res) => {
   });
 });
 
+router.get("/portfolio", async (req, res) => {
+  let graphical = await GraphicsUpload.find().sort({ timeCreated: "desc" });
+  res.render("portfolio", {
+    pageTitle: "Micky Designs features showroom",
+    graphics: graphical,
+  });
+});
+
 router.get("/", routeController.home);
 
 module.exports = router;
